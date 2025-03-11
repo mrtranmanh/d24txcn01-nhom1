@@ -72,8 +72,8 @@ void saveUserInfo(const std::string& username, json& userData) {
     fs::create_directories(userDir);  // Tao thu muc nguoi dung neu chua co
 
     // Them truong Diem Thuong neu chua co
-    if (!userData.contains("DiemThuong")) {
-        userData["DiemThuong"] = 0;
+    if (!userData.contains("Points")) {
+        userData["Points"] = 0;
     }
 
     // Lay ID lon nhat tu cac tep info.json

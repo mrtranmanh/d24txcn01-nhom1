@@ -17,7 +17,11 @@ void loginUser() {
 
     if (userData["Password"] == hashPassword(password)) {
         cout << "Dang nhap thanh cong!\n";
-        cout << "Xin chao, " << userData["HoTen"] << "!\n";
+        if (userData.contains("FullName")) {
+            cout << "Xin chao, " << userData["FullName"] << "!\n";
+        } else {
+            cout << "Xin chao, nguoi dung an danh!\n";
+        }
     } else {
         cout << "Sai mat khau!\n";
     }
