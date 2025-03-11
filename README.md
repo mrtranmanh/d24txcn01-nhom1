@@ -46,7 +46,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 ### A3. Quản lý đăng nhập
 - Mật khẩu tự động tạo khi không nhập
 - Người dùng có thể tự thay đổi mật khẩu 🔴
-- Người dùng nhận được yêu cầu thay đổi mật khẩu trong lần đăng nhập đầu tiên nếu là mật khẩu tự sinh (Đang tiến hành) 🔴
+- Người dùng nhận được yêu cầu thay đổi mật khẩu trong lần đăng nhập đầu tiên nếu là mật khẩu tự sinh
 - OTP - One Time Password 🔴
 - Cho phép đăng nhập bằng tài khoản đã có và thực hiện chức năng tương ứng
 
