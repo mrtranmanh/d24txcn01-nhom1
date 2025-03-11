@@ -12,6 +12,8 @@ namespace fs = std::filesystem;
 
 // Ham bam mat khau
 string hashPassword(const string& password);
+// Ham tao mat khau
+std::string generateRandomPassword(int length = 12);
 
 // Luu & doc du lieu nguoi dung
 void saveUserInfo(const string& username, json& userData);

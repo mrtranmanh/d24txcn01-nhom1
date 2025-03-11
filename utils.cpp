@@ -5,6 +5,19 @@ string hashPassword(const string& password) {
     return to_string(hash<string>{}(password));
 }
 
+// Ham tao mat khau ngau nhien
+string generateRandomPassword(int length) {
+    const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    string password;
+    srand(time(0));
+
+    for (int i = 0; i < length; i++) {
+        password += chars[rand() % chars.size()];
+    }
+
+    return password;
+}
+
 // Ham tim ID lon nhat trong cac tep info.json
 int getMaxUserId(const std::string& usersDir) {
     int maxId = 0;

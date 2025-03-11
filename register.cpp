@@ -29,7 +29,7 @@ void registerUser() {
         regex usernamePattern("^[a-zA-Z0-9_.]{4,32}$");
 
         if (!regex_match(username, usernamePattern)) {
-            cout << "❌ Ten dang nhap khong hop le! 4-32 ky tu, chi gom chu, so, dau . hoac _ .\n";
+            cout << "Ten dang nhap khong hop le! 4-32 ky tu, chi gom chu, so, dau . hoac _ .\n";
         } else {
             break; // Hop le thi thoat vong lap
         }
@@ -37,29 +37,41 @@ void registerUser() {
     } while (true);
 
     if (fs::exists("users/" + username + "/settings.json")) {
-        cout << "❌ Tai khoan da ton tai! Dang ky that bai.\n";
+        cout << "Tai khoan da ton tai! Dang ky that bai.\n";
         return;
     }
 
     // Nhap va xac nhan mat khau
     do {
-        cout << "Nhap mat khau (6-64 ky tu): ";
-        cin >> password;
+        cout << "Nhap mat khau (khong nhap se tu dong tao): ";
+
+        // Xoa bo nho dem truoc khi nhap
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        getline(cin, password); // Dung getline de nhap ca chuoi rong
+
+        if (password.empty()) {
+            password = generateRandomPassword();
+            cout << "Mat khau cua ban la: " << password << endl;
+            break;
+        }
+
         cout << "Nhap lai mat khau: ";
-        cin >> confirmPassword;
+        getline(cin, confirmPassword);
 
         if (password != confirmPassword) {
-            cout << "❌ Mat khau khong khop, vui long nhap lai!\n";
+            cout << "Mat khau khong khop, vui long nhap lai!\n";
         } else if (password.length() < 6 || password.length() > 64) {
-            cout << "❌ Mat khau phai tu 6-64 ky tu!\n";
+            cout << "Mat khau phai tu 6-64 ky tu!\n";
         } else {
             break;
         }
+
     } while (true);
 
     string hashedPassword = hashPassword(password);
 
-    // Luu thong tin dang nhap vao settings.json
+    // Lưu thông tin đăng nhập
     saveUserCredentials(username, hashedPassword);
     // XOA BO NHO DEM TRUOC KHI DUNG getline()
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
@@ -80,7 +92,7 @@ void registerUser() {
         regex fullNamePattern("^[A-Za-zÀ-Ỹà-ỹ\\s]{2,50}$");
 
         if (!regex_match(fullName, fullNamePattern)) {
-            cout << "❌ Ho ten khong hop le! Chi chua chu cai va dau cach, tu 2-50 ky tu.\n";
+            cout << "Ho ten khong hop le! Chi chua chu cai va dau cach, tu 2-50 ky tu.\n";
         } else {
             break; // Hop le thi thoat vong lap
         }
@@ -113,7 +125,7 @@ void registerUser() {
             gender = "Nu";
             break;
         } else {
-            cout << "❌ Lua chon khong hop le! Vui long nhap 1, 2 hoac Enter de bo qua.\n";
+            cout << "Lua chon khong hop le! Vui long nhap 1, 2 hoac Enter de bo qua.\n";
         }
 
     } while (true);
@@ -127,7 +139,7 @@ void registerUser() {
         getline(cin, address);
         
         if (address.length() > 255) {
-            cout << "❌ Dia chi khong hop le! Toi da 255 ky tu";
+            cout << "Dia chi khong hop le! Toi da 255 ky tu";
         } else {
             break; // Dia chi hop le, thoat vong lap
         }
@@ -143,7 +155,7 @@ void registerUser() {
         getline(cin, phone);
 
         if (!regex_match(phone, phonePattern)) {
-            cout << "❌ So dien thoai khong hop le! Chi chua so, toi da 16 ky tu ";
+            cout << "So dien thoai khong hop le! Chi chua so, toi da 16 ky tu ";
         } else {
             break; // Hop le thi thoat vong lap
         }
@@ -166,7 +178,7 @@ void registerUser() {
 
         // Kiem tra email hop le
         if (!regex_match(email, emailPattern)) {
-            cout << "❌ Email khong hop le! Vui long nhap lai (vi du: example@gmail.com): ";
+            cout << "Email khong hop le! Vui long nhap lai (vi du: example@gmail.com): ";
         } else {
             break; // Hop le thi thoat vong lap
         }
@@ -186,20 +198,20 @@ void registerUser() {
         }
 
         if (!regex_match(birthday, datePattern)) {
-            cout << "❌ Dinh dang ngay sinh khong hop le! Vui long nhap lai.\n";
+            cout << "Dinh dang ngay sinh khong hop le! Vui long nhap lai.\n";
             continue;
         }
 
         // Tach ngay, thang, nam
         int day, month, year;
         if (sscanf(birthday.c_str(), "%d/%d/%d", &day, &month, &year) != 3) {
-            cout << "❌ Dinh dang ngay sinh khong hop le! Vui long nhap lai.\n";
+            cout << "Dinh dang ngay sinh khong hop le! Vui long nhap lai.\n";
             continue;
         }
 
         // Kiem tra ngay hop le
         if (!isValidDate(day, month, year)) {
-            cout << "❌ Ngay sinh khong hop le! Vui long nhap lai.\n";
+            cout << "Ngay sinh khong hop le! Vui long nhap lai.\n";
         } else {
             break; // Thoat vong lap neu hop le
         }

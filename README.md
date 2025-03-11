@@ -23,7 +23,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 
 ### A1. Tạo mới tài khoản khi đăng ký
 - Người dùng có thể nhập dữ liệu để tạo tài khoản
-- Nhân viên quản lý có thể nhập hộ tài khoản
+- Nhân viên quản lý có thể nhập hộ tài khoản 🔴
 - Cấu trúc thông tin người dùng:
     - user_id: hế thống tự động tạo
     - Username: Trường tên đăng nhập, bắt buộc phải nhập (4-32 ký tự)
@@ -31,7 +31,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
     - FullName: Danh tính người sở hữu tài khoản (Chỉ gồm chữ cái và dấu cách, từ 2-50 ký tự)
     - Gender: Giới tính người sở hữu tài khoản (Cho phép 2 lựa chọn Nam/Nữ)
     - Address: Địa chỉ người sở hữu tài khoản (Tối đa 255 ký tự)
-    - Phone: Điện thoại người sở hữu tài khoản (Chỉ cho phép điền số, khoảng trắng, dấu () + -) (Đang tiến hành) 🔴
+    - Phone: Điện thoại người sở hữu tài khoản (Chỉ cho phép điền số)
     - Email: Email người sở hữu tài khoản (kiểm tra theo định dạng example@abc.com)
     - Birthday: Ngày tháng năm sinh người sở hữu tài khoản (định dạng dd//mm//yyyy)
     - Points: Điểm thưởng (Mặc định ban đầu là 0)
@@ -44,7 +44,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Backup dữ liệu (Đang tiến hành) 🔴
 
 ### A3. Quản lý đăng nhập
-- Mật khẩu tự động tạo khi không nhập (Đang tiến hành) 🔴
+- Mật khẩu tự động tạo khi không nhập
 - Người dùng có thể tự thay đổi mật khẩu 🔴
 - Người dùng nhận được yêu cầu thay đổi mật khẩu trong lần đăng nhập đầu tiên nếu là mật khẩu tự sinh (Đang tiến hành) 🔴
 - OTP - One Time Password 🔴
