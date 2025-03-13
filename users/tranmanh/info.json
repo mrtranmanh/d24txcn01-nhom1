@@ -1,10 +1,9 @@
 {
-    "Address": "HN",
-    "Points": 0,
-    "Phone": "0966609467",
-    "Email": "mr.tranmanh90@gmail.com",
-    "Gender": "Nam",
+    "user_id": 1,
     "FullName": "Tran Manh",
-    "Birthday": "05/10/1990",
-    "user_id": 1
+    "Gender": "Nam",
+    "Email": "mr.tranmanh90@gmail.com",
+    "Phone": "0966609467",
+    "Address": "HN",
+    "Points": 0
 }
