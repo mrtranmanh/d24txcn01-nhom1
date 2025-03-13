@@ -46,7 +46,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 
 ### A3. Quản lý đăng nhập
 - Mật khẩu tự động tạo khi không nhập
-- Người dùng có thể tự thay đổi mật khẩu 🔴
+- Người dùng có thể tự thay đổi mật khẩu
 - Người dùng nhận được yêu cầu thay đổi mật khẩu trong lần đăng nhập đầu tiên nếu là mật khẩu tự sinh
 - OTP - One Time Password 🔴
 - Cho phép đăng nhập bằng tài khoản đã có và thực hiện chức năng tương ứng
@@ -70,6 +70,10 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Sử dụng OTP để xác nhận thực hiện giao dịch chuyển điểm giữa các ví 🔴
 - Hệ thống ghi nhận lại giao dịch này trong lịch sử giao dịch (transaction log) 🔴
 - Cho phép người dùng theo dõi số dư, lịch sử giao dịch (và trạng thái thực hiện giao dịch) 🔴
+
+### D. Chức năng mở rộng
+- Thu gọn câu lệnh biên dịch 🔴
+- Mật khẩu ẩn khi gõ
 
 ## 📥 Cách tải chương trình, dịch chương trình, các tập tin, các thư viện kèm theo
 

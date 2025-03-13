@@ -1,10 +1,11 @@
 #include "dashboard.h"
 #include "backup.h"
+#include "changepassword.h"
 #include <iostream>
 
 using namespace std;
 
-void showDashboard(const string& username, const json& userData, const json& userInfo) {
+void showDashboard(const string& username, json& userData, const json& userInfo) {
     int choice;
     bool isQuanLy = (userData.contains("Role") && userData["Role"] == "Quan_Ly"); //Kiem tra loai tai khoan
 
@@ -58,7 +59,7 @@ void showDashboard(const string& username, const json& userData, const json& use
                 break;
 
             case 3:
-                cout << "Chuc nang dang cap nhat...\n";
+                changePassword(username);
                 break;
 
             case 4:

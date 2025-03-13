@@ -6,6 +6,6 @@
 
 using json = nlohmann::json;
 
-void showDashboard(const std::string& username, const json& userData, const json& userInfo);
+void showDashboard(const std::string& username, json& userData, const json& userInfo);
 
 #endif
