@@ -6,6 +6,9 @@ using namespace std;
 
 int main() {
     int lua_chon;
+    
+
+
     do {
         cout << "\n1. Dang ky\n2. Dang nhap\n3. Thoat\nChon: ";
         

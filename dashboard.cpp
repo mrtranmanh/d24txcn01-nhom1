@@ -1,4 +1,5 @@
 #include "dashboard.h"
+#include "backup.h"
 #include <iostream>
 
 using namespace std;
@@ -15,6 +16,11 @@ void showDashboard(const string& username, const json& userData, const json& use
             cout << "Xin chao, " << username << "!\n";
         }
 
+        if (isQuanLy) {
+            //Chay backup neu can thiet
+            checkAndBackup();
+        }
+
         cout << "1. Xem thong tin ca nhan\n";
         cout << "2. Sua thong tin ca nhan\n";
         cout << "3. Doi mat khau\n";
@@ -23,6 +29,7 @@ void showDashboard(const string& username, const json& userData, const json& use
             cout << "\n5. Theo doi danh sach nguoi dung\n";
             cout << "6. Tao tai khoan nguoi dung\n";
             cout << "7. Thay doi thong tin nguoi dung\n";
+            cout << "8. Backup du lieu\n";
         }
         cout << "Chon: ";
 
@@ -68,6 +75,12 @@ void showDashboard(const string& username, const json& userData, const json& use
             
             case 7:
                 cout << "Chuc nang dang cap nhat...\n";
+                break;
+
+            case 8:
+                cout << "\nDang tien hanh backup du lieu...\n";
+                backupUsers(); // Gọi hàm backup thủ công
+                cout << "Backup hoan thanh!\n";
                 break;
 
             default:

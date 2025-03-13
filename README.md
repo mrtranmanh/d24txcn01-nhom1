@@ -40,7 +40,9 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Lưu lại dữ liệu tài khoản người dùng vào tập tin txt hoặc json
 - Sử  dụng cấu trúc mỗi tài khoản là một thư mục riêng
 - Mật khẩu được mã hóa
-- Backup dữ liệu (Đang tiến hành) 🔴
+- Backup dữ liệu:
+    - Tự động: mỗi 7 ngày khi người quản lý đăng nhập
+    - Thủ công: chức năng trong bảng quản trị của người quản lý
 
 ### A3. Quản lý đăng nhập
 - Mật khẩu tự động tạo khi không nhập
@@ -82,7 +84,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Cai them chuong trinh bien dich C++: sudo apt install build-essential
 - Chạy lệnh biên dịch:
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp -o main
+g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp -o main
 ```
 #### 2.2. Windows
 - Tải phần mềm soạn code như Visual Code ...
@@ -103,19 +105,22 @@ g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp -o main
     + Bạn cần đóng và mở lại bất kỳ cửa sổ dòng lệnh nào để biến PATH mới có hiệu lực.
 - Chạy lệnh biên dịch trong Visual Code (Nhớ tắt đi rồi bật lại):
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp -o main.exe
+g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp -o main.exe
 ```
 - Video hướng dẫn: https://www.youtube.com/watch?v=oC69vlWofJQ
 
 ### 3. Các tập tin, thư mục
-- main, main.exe (File thực thi)
-- main.cpp (File điều khiển chính)
+- backup (Thư mục lưu trữ các bản backup)
 - lib (Thư mục thư viện ngoài cho dự án)
 - users (Thư mục lưu trữ thông tin user)
-- dashboard.h, dashboard.cpp (Khai báo và Xử lý trang quan tri)
-- login.h, login.cpp (Khai báo và Xử lý đăng nhập)
-- register.h register.cpp (Khai báo và Xử lý đăng ký)
-- utils.h, utils.cpp (Khai báo và Xử lý cài đặt hàm chung như hash mật khẩu, lưu & đọc dữ liệu ...)
+- backup.h, backup.cpp (File Khai báo và Xử lý chức năng Backup)
+- backup/last_backup.txt (File lưu trữ thời gian backup cuối)
+- dashboard.h, dashboard.cpp (File Khai báo và Xử lý trang quan tri)
+- login.h, login.cpp (File Khai báo và Xử lý đăng nhập)
+- main, main.exe (File thực thi)
+- main.cpp (File điều khiển chính)
+- register.h register.cpp (FileKhai báo và Xử lý đăng ký)
+- utils.h, utils.cpp (File Khai báo và Xử lý cài đặt hàm chung như hash mật khẩu, lưu & đọc dữ liệu ...)
 
 ### 4. Các thư viện kèm theo
 - filesystem: Quản lý tệp và thư mục (Thư viện chuẩn của C++17)
