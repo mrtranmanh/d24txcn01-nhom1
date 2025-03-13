@@ -23,7 +23,6 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 
 ### A1. Tạo mới tài khoản khi đăng ký
 - Người dùng có thể nhập dữ liệu để tạo tài khoản
-- Nhân viên quản lý có thể nhập hộ tài khoản 🔴
 - Cấu trúc thông tin người dùng:
     - user_id: hế thống tự động tạo
     - Username: Trường tên đăng nhập, bắt buộc phải nhập (4-32 ký tự)
@@ -83,7 +82,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Cai them chuong trinh bien dich C++: sudo apt install build-essential
 - Chạy lệnh biên dịch:
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp -o main
+g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp -o main
 ```
 #### 2.2. Windows
 - Tải phần mềm soạn code như Visual Code ...
@@ -104,7 +103,7 @@ g++ main.cpp register.cpp login.cpp utils.cpp -o main
     + Bạn cần đóng và mở lại bất kỳ cửa sổ dòng lệnh nào để biến PATH mới có hiệu lực.
 - Chạy lệnh biên dịch trong Visual Code (Nhớ tắt đi rồi bật lại):
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp -o main.exe
+g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp -o main.exe
 ```
 - Video hướng dẫn: https://www.youtube.com/watch?v=oC69vlWofJQ
 
@@ -113,6 +112,7 @@ g++ main.cpp register.cpp login.cpp utils.cpp -o main.exe
 - main.cpp (File điều khiển chính)
 - lib (Thư mục thư viện ngoài cho dự án)
 - users (Thư mục lưu trữ thông tin user)
+- dashboard.h, dashboard.cpp (Khai báo và Xử lý trang quan tri)
 - login.h, login.cpp (Khai báo và Xử lý đăng nhập)
 - register.h register.cpp (Khai báo và Xử lý đăng ký)
 - utils.h, utils.cpp (Khai báo và Xử lý cài đặt hàm chung như hash mật khẩu, lưu & đọc dữ liệu ...)
