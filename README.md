@@ -73,7 +73,8 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 
 ### D. Chức năng mở rộng
 - Thu gọn câu lệnh biên dịch 🔴
-- Mật khẩu ẩn khi gõ
+- Mật khẩu ẩn khi gõ 🔴
+- Test trên macOS 🔴
 
 ## 📥 Cách tải chương trình, dịch chương trình, các tập tin, các thư viện kèm theo
 
@@ -83,12 +84,12 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Giải nén tệp nếu cần thiết và lưu trữ chương trình vào một thư mục dễ tìm trên máy tính.
 - Mở thư mục chứa tệp đã tải về và tìm tệp thực thi chương trình (file main).
 ### 2. Dịch chương trình
-#### 2.1. Ubuntu
+#### 2.1. Linux
 - Tải phần mềm soạn code như Visual Code ...
 - Cai them chuong trinh bien dich C++: sudo apt install build-essential
 - Chạy lệnh biên dịch:
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp -o main
+g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp changepassword.cpp -o main
 ```
 #### 2.2. Windows
 - Tải phần mềm soạn code như Visual Code ...
@@ -109,9 +110,9 @@ g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp -o main
     + Bạn cần đóng và mở lại bất kỳ cửa sổ dòng lệnh nào để biến PATH mới có hiệu lực.
 - Chạy lệnh biên dịch trong Visual Code (Nhớ tắt đi rồi bật lại):
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp -o main.exe
+g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp changepassword.cpp -o main.exe
 ```
-- Video hướng dẫn: https://www.youtube.com/watch?v=oC69vlWofJQ
+- Video thao tác chi tiết: https://www.youtube.com/watch?v=oC69vlWofJQ
 
 ### 3. Các tập tin, thư mục
 - backup (Thư mục lưu trữ các bản backup)
@@ -119,11 +120,12 @@ g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp -o main.e
 - users (Thư mục lưu trữ thông tin user)
 - backup.h, backup.cpp (File Khai báo và Xử lý chức năng Backup)
 - backup/last_backup.txt (File lưu trữ thời gian backup cuối)
+- changepassword.h, changepassword.cpp (File Khai báo và Xử lý chức năng Thay đổi password)
 - dashboard.h, dashboard.cpp (File Khai báo và Xử lý trang quan tri)
 - login.h, login.cpp (File Khai báo và Xử lý đăng nhập)
 - main, main.exe (File thực thi)
 - main.cpp (File điều khiển chính)
-- register.h register.cpp (FileKhai báo và Xử lý đăng ký)
+- register.h register.cpp (File Khai báo và Xử lý đăng ký)
 - utils.h, utils.cpp (File Khai báo và Xử lý cài đặt hàm chung như hash mật khẩu, lưu & đọc dữ liệu ...)
 
 ### 4. Các thư viện kèm theo
@@ -134,9 +136,9 @@ g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp -o main.e
 - regex: Thư viện regex để kiểm tra định dạng (Thư viện chuẩn của C++11)
 
 ## ⚙️ Cách chạy chương trình, thao tác thực hiện
-Trên Ubuntu sử dụng lệnh ./main để chạy file main  
+Trên Linux sử dụng lệnh ./main để chạy file main  
 Trên Windown click đúp file main.exe để chạy
 
 ## 📚 Tài liệu đã tham khảo
-https://json.nlohmann.me/  
-https://code.visualstudio.com/docs
+[1] JSON https://json.nlohmann.me/  
+[2] Visualstudio C++ https://code.visualstudio.com/docs/cpp/config-linux
