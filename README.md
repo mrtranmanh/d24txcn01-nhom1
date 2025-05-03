@@ -48,7 +48,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Mật khẩu tự động tạo khi không nhập
 - Người dùng có thể tự thay đổi mật khẩu
 - Người dùng nhận được yêu cầu thay đổi mật khẩu trong lần đăng nhập đầu tiên nếu là mật khẩu tự sinh
-- OTP - One Time Password 🔴
+- OTP - One Time Password
 - Cho phép đăng nhập bằng tài khoản đã có và thực hiện chức năng tương ứng
 
 ### B1. Tài khoản người dùng và chức năng
@@ -80,16 +80,24 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 
 ### 1. Cách tải chương trình
 - Truy cập vào nguồn tải chương trình (github).
-- Tải tệp chương trình về máy tính của bạn (ví dụ: tệp nén `.zip`, `.tar.gz`, hoặc tệp thực thi `.exe`).
-- Giải nén tệp nếu cần thiết và lưu trữ chương trình vào một thư mục dễ tìm trên máy tính.
+- Tải thu mục chương trình về máy tính của bạn bằng file zip hoặc lệnh clone
 - Mở thư mục chứa tệp đã tải về và tìm tệp thực thi chương trình (file main).
+- Ngoài ra để đảm bảo chương trình hoat động tốt cần kiểm tra xem máy đã có những thư viện sau chưa:
+    - CURL --- Mở cmd hoặc teminal:
+    ```bash
+    curl --version
+    ```
+    Nếu không xuất hiện thông báo version hoặc dòng OpenSSL thì tiến hành cái đặt: https://curl.se/windows/ (trên window) hoặc trên ubuntu
+    ```bash
+    sudo apt install curl libcurl4-openssl-dev
+    ```
 ### 2. Dịch chương trình
 #### 2.1. Linux
 - Tải phần mềm soạn code như Visual Code ...
 - Cai them chuong trinh bien dich C++: sudo apt install build-essential
 - Chạy lệnh biên dịch:
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp changepassword.cpp -o main
+g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp sendemail.cpp utils.cpp -o main
 ```
 #### 2.2. Windows
 - Tải phần mềm soạn code như Visual Code ...
@@ -110,7 +118,7 @@ g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp changepas
     + Bạn cần đóng và mở lại bất kỳ cửa sổ dòng lệnh nào để biến PATH mới có hiệu lực.
 - Chạy lệnh biên dịch trong Visual Code (Nhớ tắt đi rồi bật lại):
 ```bash
-g++ main.cpp register.cpp login.cpp utils.cpp dashboard.cpp backup.cpp changepassword.cpp -o main.exe
+g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp sendemail.cpp utils.cpp -o main.exe
 ```
 - Video thao tác chi tiết: https://www.youtube.com/watch?v=oC69vlWofJQ
 
@@ -141,4 +149,6 @@ Trên Windown click đúp file main.exe để chạy
 
 ## 📚 Tài liệu đã tham khảo
 [1] JSON https://json.nlohmann.me/  
-[2] Visualstudio C++ https://code.visualstudio.com/docs/cpp/config-linux
+[2] Visualstudio C++ https://code.visualstudio.com/docs/cpp/config-linux  
+[3] SMTP https://everything.curl.dev/usingcurl/smtp.html  
+[4] COTP, https://github.com/tilkinsc/COTP  
