@@ -8,7 +8,8 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 | Họ và Tên       | Lớp             | Mã SV        | Công việc phụ trách                          |
 |----------------|----------------|-------------|---------------------------------------------|
 | **Trần Duy Mạnh** | D24TXCN01-B    | B24DTCN004  | Setup ban đầu, phân chia công việc, Đồ án Phần A |
-| **Tạ Thu Hà**   | D24TXCN01-B    | B24DTCN003  | Tester, tổng kết báo cáo, Đồ án Phần B     |
+| **Tạ Thu Hà**   | D24TXCN01-B    | B24DTCN003  | Tester, tổng kết báo cáo, Đồ án Phần B1     |
+| **LÊ ĐỨC TOÀN**   | D24TXCN01-B    | B24DTCN016  | Theo dõi danh sách nhóm, Tạo thêm tài khoản mới ..., Đồ án Phần B2     |
 | **Trần Anh Thái** | D23TXCN02-K    | K23DTCN200  | Đồ án Phần C                               |
 
 ### Yêu cầu thêm:
@@ -118,7 +119,7 @@ g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp 
     + Bạn cần đóng và mở lại bất kỳ cửa sổ dòng lệnh nào để biến PATH mới có hiệu lực.
 - Chạy lệnh biên dịch trong Visual Code (Nhớ tắt đi rồi bật lại):
 ```bash
-g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp sendemail.cpp utils.cpp -o main.exe
+g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp sendemail.cpp utils.cpp manager.cpp otp.cpp -o main.exe
 ```
 - Video thao tác chi tiết: https://www.youtube.com/watch?v=oC69vlWofJQ
 
