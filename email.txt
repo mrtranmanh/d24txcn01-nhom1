@@ -1,10 +1,9 @@
-To: player9xhn@gmail.com
-Subject: Chào mừng bạn đã đăng ký tài khoản!
+To: 
+Subject: Ma OTP xac nhan thay doi thong tin
 
-Xin chào 3gfj,
+Ban nhan duoc email nay vi co yeu cau thay doi thong tin tai khoan.
+Ma OTP cua ban la: 993522
 
-Chúc mừng bạn đã đăng ký tài khoản thành công!
-Hãy sử dụng tài khoản này để đăng nhập và trải nghiệm dịch vụ của chúng tôi.
+Ma co hieu luc trong 5 phut. Vui long khong chia se ma nay voi bat ky ai.
+Neu ban khong yeu cau thay doi, vui long lien he voi quan tri vien.
 
-Trân trọng,
-Đội ngũ hỗ trợ

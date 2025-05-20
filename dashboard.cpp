@@ -2,6 +2,7 @@
 #include "backup.h"
 #include "changepassword.h"
 #include <iostream>
+#include "manager.h"
 
 using namespace std;
 
@@ -41,6 +42,9 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
             continue;
         }
 
+        // Declare userList outside the switch to avoid cross-initialization issues
+        std::vector<UserInfo> userList;
+        
         switch (choice) {
             case 1:
                 cout << "\n===== THONG TIN CA NHAN =====\n";
@@ -67,15 +71,22 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
                 return;
 
             case 5:
-                cout << "Chuc nang dang cap nhat...\n";
+                userList = getUserList();
+                std::cout << "\n===== USER LIST =====\n";
+                for (const auto& user : userList) {
+                    std::cout << "Username: " << user.username 
+                            << " | Name: " << user.fullName 
+                            << " | Role: " << user.role 
+                            << " | Email: " << user.email << "\n";
+                }
                 break;
             
             case 6:
-                cout << "Chuc nang dang cap nhat...\n";
+                createNewUser();
                 break;
             
             case 7:
-                cout << "Chuc nang dang cap nhat...\n";
+                modifyUserInfo(username);
                 break;
 
             case 8:

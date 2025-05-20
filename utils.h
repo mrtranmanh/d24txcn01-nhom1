@@ -26,4 +26,7 @@ json loadUserCredentials(const string& username);
 void saveUserHistory(const string& username, const json& historyData);
 json loadUserHistory(const string& username);
 
+std::string trim(const std::string& str);
+void logManagerAction(const std::string& managerUsername, const std::string& action);
+
 #endif

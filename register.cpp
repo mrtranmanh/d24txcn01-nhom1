@@ -42,6 +42,9 @@ bool isEmailExist(const std::string& email) {
 void registerUser() {
     string username, password, confirmPassword;
     json userData;
+    
+     // Define userDir at the beginning of the function
+     std::string userDir = "users/" + username;
 
     // Ten dang nhap (username)
     do {

@@ -166,3 +166,21 @@ json loadUserInfo(const string& username) {
     file.close();
     return userData;
 }
+
+std::string trim(const std::string& str) {
+    size_t first = str.find_first_not_of(" \t\n\r");
+    if (first == std::string::npos) return "";
+    size_t last = str.find_last_not_of(" \t\n\r");
+    return str.substr(first, (last - first + 1));
+}
+
+void logManagerAction(const std::string& managerUsername, const std::string& action) {
+    std::ofstream logFile("manager_actions.log", std::ios::app);
+    if (logFile.is_open()) {
+        auto now = std::chrono::system_clock::now();
+        std::time_t now_time = std::chrono::system_clock::to_time_t(now);
+        logFile << std::put_time(std::localtime(&now_time), "%Y-%m-%d %H:%M:%S") 
+                << " | " << managerUsername << " | " << action << "\n";
+        logFile.close();
+    }
+}
