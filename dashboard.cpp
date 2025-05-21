@@ -3,6 +3,8 @@
 #include "changepassword.h"
 #include <iostream>
 #include "manager.h"
+#include "edit_user_info.h"
+
 
 using namespace std;
 
@@ -55,11 +57,13 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
                 if (userInfo.contains("Email")) cout << "Email: " << userInfo["Email"].get<string>() << "\n";
                 if (userInfo.contains("Phone")) cout << "So dien thoai: " << userInfo["Phone"].get<string>() << "\n";
                 if (userInfo.contains("Address")) cout << "Dia chi: " << userInfo["Address"].get<string>() << "\n";
+                if (userInfo.contains("Birthday")) cout << "Ngay sinh: " << userInfo["Birthday"].get<string>() << "\n";
                 cout << "=============================\n";             
                 break;
 
             case 2:
-                cout << "Chuc nang dang cap nhat...\n";
+                cin.ignore(); // Xóa buffer trước khi gọi editUserInfo
+                editUserInfo(username);
                 break;
 
             case 3:
