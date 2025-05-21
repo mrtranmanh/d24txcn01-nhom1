@@ -37,6 +37,28 @@ bool sendRegistrationSuccessEmail(const string& recipient, const string& usernam
     return sendEmail(recipient, subject, body);
 }
 
+// Gửi email OTP cho việc thay đổi thông tin
+bool sendOTPForInfoChange(const string& recipient, const string& otp, const string& changes) {
+    string subject = "Mã xác thực OTP cho thay đổi thông tin";
+    string body = "Xin chào,\n\n"
+                  "Bạn đã yêu cầu thay đổi thông tin cá nhân.\n\n"
+                  + changes + "\n\n"
+                  "Mã OTP của bạn là: " + otp + "\n\n"
+                  "Mã này có hiệu lực trong 5 phút. Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.\n\n"
+                  "Trân trọng,\nĐội ngũ hỗ trợ";
+    return sendEmail(recipient, subject, body);
+}
+// Gửi email thông báo thay đổi thông tin thành công
+bool sendInfoChangeSuccessEmail(const string& recipient, const string& username) {
+    string subject = "Thay đổi thông tin tài khoản thành công";
+    string body = "Xin chào " + username + ",\n\n"
+                  "Thông tin tài khoản của bạn đã được cập nhật thành công!\n"
+                  "Nếu bạn không thực hiện thay đổi này, vui lòng liên hệ ngay với đội hỗ trợ.\n\n"
+                  "Trân trọng,\nĐội ngũ hỗ trợ";
+    return sendEmail(recipient, subject, body);
+}
+
+
 // Gửi email đặt lại mật khẩu
 // bool sendPasswordResetEmail(const string& recipient, const string& resetToken) {
 //     string subject = "Yêu cầu đặt lại mật khẩu";
