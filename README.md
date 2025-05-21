@@ -8,7 +8,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 | Họ và Tên       | Lớp             | Mã SV        | Công việc phụ trách                          |
 |----------------|----------------|-------------|---------------------------------------------|
 | **Trần Duy Mạnh** | D24TXCN01-B    | B24DTCN004  | Setup ban đầu, phân chia công việc, Đồ án Phần A |
-| **Tạ Thu Hà**   | D24TXCN01-B    | B24DTCN003  | Tester, tổng kết báo cáo, Đồ án Phần B1     |
+| **Tạ Thu Hà**   | D24TXCN01-B    | B24DTCN003  | Tester, Đồ án Phần B1     |
 | **LÊ ĐỨC TOÀN**   | D24TXCN01-B    | B24DTCN016  | Theo dõi danh sách nhóm, Tạo thêm tài khoản mới ..., Đồ án Phần B2     |
 | **Trần Anh Thái** | D23TXCN02-K    | K23DTCN200  | Đồ án Phần C                               |
 
@@ -58,19 +58,19 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Xác nhận OTP của người dùng rồi mới thay đổi thông tin thành công
 
 ### B2. Tài khoản người quản lý và chức năng
-- Theo dõi danh sách nhóm 🔴
-- Tạo thêm tài khoản mới 🔴
-- Điều chỉnh thông tin của tài khoản khi có yêu cầu từ chủ tài khoản (làm hộ). Khi điều chỉnh xong, hệ thống gửi một mã OTP đến chủ tài khoản cùng thông báo các nội dung sẽ thay đổi để chủ tài khoản xác nhận thao tác cập nhật. Nếu mã OTP do chủ tài khoản nhập vào hợp lệ, hệ thống tiến hành cập nhật thông tin của người dùng. 🔴
+- Theo dõi danh sách nhóm
+- Tạo thêm tài khoản mới
+- Điều chỉnh thông tin của tài khoản khi có yêu cầu từ chủ tài khoản (làm hộ). Khi điều chỉnh xong, hệ thống gửi một mã OTP đến chủ tài khoản cùng thông báo các nội dung sẽ thay đổi để chủ tài khoản xác nhận thao tác cập nhật. Nếu mã OTP do chủ tài khoản nhập vào hợp lệ, hệ thống tiến hành cập nhật thông tin của người dùng.
 
 ### C. Quản lý hoạt động ví
-- Mỗi người dùng có một bộ dữ liệu về số điểm (ví - wallet) 🔴
-- Lưu trữ dữ liệu các giao dịch trao đổi, chuyển điểm từ một ví sang một ví khác. 🔴
-- Một ví có mã số định danh duy nhất phân biệt với tất cả các ví còn lại. 🔴
+- Mỗi người dùng có một bộ dữ liệu về số điểm (ví - wallet)
+- Lưu trữ dữ liệu các giao dịch trao đổi, chuyển điểm từ một ví sang một ví khác.
+- Một ví có mã số định danh duy nhất phân biệt với tất cả các ví còn lại.
 - Ví tổng: nguồn duy nhất sinh ra tổng số điểm sẽ lưu chuyển trong toàn bộ hệ thống. 🔴
-- Giao dịch chuyển điểm giữa các ví 🔴
-- Sử dụng OTP để xác nhận thực hiện giao dịch chuyển điểm giữa các ví 🔴
-- Hệ thống ghi nhận lại giao dịch này trong lịch sử giao dịch (transaction log) 🔴
-- Cho phép người dùng theo dõi số dư, lịch sử giao dịch (và trạng thái thực hiện giao dịch) 🔴
+- Giao dịch chuyển điểm giữa các ví
+- Sử dụng OTP để xác nhận thực hiện giao dịch chuyển điểm giữa các ví
+- Hệ thống ghi nhận lại giao dịch này trong lịch sử giao dịch (transaction log)
+- Cho phép người dùng theo dõi số dư, lịch sử giao dịch (và trạng thái thực hiện giao dịch)
 
 ### D. Chức năng mở rộng
 - Thu gọn câu lệnh biên dịch 🔴
@@ -98,7 +98,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Cai them chuong trinh bien dich C++: sudo apt install build-essential
 - Chạy lệnh biên dịch:
 ```bash
-g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp sendemail.cpp utils.cpp -o main
+g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp edit_user_info_impl.cpp manager.cpp login.cpp otp.cpp register.cpp sendemail.cpp utils.cpp wallet_manager.cpp wallet.cpp -o main
 ```
 #### 2.2. Windows
 - Tải phần mềm soạn code như Visual Code ...
@@ -119,7 +119,7 @@ g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp 
     + Bạn cần đóng và mở lại bất kỳ cửa sổ dòng lệnh nào để biến PATH mới có hiệu lực.
 - Chạy lệnh biên dịch trong Visual Code (Nhớ tắt đi rồi bật lại):
 ```bash
-g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp sendemail.cpp utils.cpp manager.cpp otp.cpp -o main.exe
+g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp edit_user_info_impl.cpp manager.cpp login.cpp otp.cpp register.cpp sendemail.cpp utils.cpp wallet_manager.cpp wallet.cpp -o main.exe
 ```
 - Video thao tác chi tiết: https://www.youtube.com/watch?v=oC69vlWofJQ
 
@@ -147,6 +147,25 @@ g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp login.cpp register.cpp 
 ## ⚙️ Cách chạy chương trình, thao tác thực hiện
 Trên Linux sử dụng lệnh ./main để chạy file main  
 Trên Windown click đúp file main.exe để chạy
+
+1. Dang ky
+2. Dang nhap (Tài khoản demo là admin -123456)  
+    1. Xem thong tin ca nhan  
+    2. Sua thong tin ca nhan  
+    3. Doi mat khau  
+    4. Quan ly vi dien tu  
+        1. Xem danh sach vi  
+        2. Tao vi moi  
+        3. Chuyen tien  
+        4. Xem lich su giao dich  
+        5. Quay lai  
+    5. Dang xuat  
+
+    6. Theo doi danh sach nguoi dung  
+    7. Tao tai khoan nguoi dung  
+    8. Thay doi thong tin nguoi dung  
+    9. Backup du lieu  
+3. Thoat
 
 ## 📚 Tài liệu đã tham khảo
 [1] JSON https://json.nlohmann.me/  

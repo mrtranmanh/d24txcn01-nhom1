@@ -4,13 +4,14 @@
 #include <iostream>
 #include "manager.h"
 #include "edit_user_info.h"
-
+#include "wallet_manager.h"
+#include <iomanip>
 
 using namespace std;
 
 void showDashboard(const string& username, json& userData, const json& userInfo) {
     int choice;
-    bool isQuanLy = (userData.contains("Role") && userData["Role"] == "Quan_Ly"); //Kiem tra loai tai khoan
+    bool isQuanLy = (userData.contains("Role") && userData["Role"] == "Quan_Ly");
 
     do {
         cout << "\n===== DASHBOARD =====\n";
@@ -21,19 +22,19 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
         }
 
         if (isQuanLy) {
-            //Chay backup neu can thiet
             checkAndBackup();
         }
 
         cout << "1. Xem thong tin ca nhan\n";
         cout << "2. Sua thong tin ca nhan\n";
         cout << "3. Doi mat khau\n";
-        cout << "4. Dang xuat\n";
+        cout << "4. Quan ly vi dien tu\n";
+        cout << "5. Dang xuat\n";
         if (isQuanLy) {
-            cout << "\n5. Theo doi danh sach nguoi dung\n";
-            cout << "6. Tao tai khoan nguoi dung\n";
-            cout << "7. Thay doi thong tin nguoi dung\n";
-            cout << "8. Backup du lieu\n";
+            cout << "\n6. Theo doi danh sach nguoi dung\n";
+            cout << "7. Tao tai khoan nguoi dung\n";
+            cout << "8. Thay doi thong tin nguoi dung\n";
+            cout << "9. Backup du lieu\n";
         }
         cout << "Chon: ";
 
@@ -44,8 +45,7 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
             continue;
         }
 
-        // Declare userList outside the switch to avoid cross-initialization issues
-        std::vector<UserInfo> userList;
+        vector<UserInfo> userList;
         
         switch (choice) {
             case 1:
@@ -62,7 +62,7 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
                 break;
 
             case 2:
-                cin.ignore(); // Xóa buffer trước khi gọi editUserInfo
+                cin.ignore();
                 editUserInfo(username);
                 break;
 
@@ -71,31 +71,51 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
                 break;
 
             case 4:
+                showWalletMenu(username);
+                break;
+
+            case 5:
                 cout << "Dang xuat...\n";
                 return;
 
-            case 5:
+            case 6:
+                if (!isQuanLy) {
+                    cout << "Lua chon khong hop le!\n";
+                    break;
+                }
                 userList = getUserList();
-                std::cout << "\n===== USER LIST =====\n";
+                cout << "\n===== USER LIST =====\n";
                 for (const auto& user : userList) {
-                    std::cout << "Username: " << user.username 
+                    cout << "Username: " << user.username 
                             << " | Name: " << user.fullName 
                             << " | Role: " << user.role 
                             << " | Email: " << user.email << "\n";
                 }
                 break;
             
-            case 6:
+            case 7:
+                if (!isQuanLy) {
+                    cout << "Lua chon khong hop le!\n";
+                    break;
+                }
                 createNewUser();
                 break;
             
-            case 7:
+            case 8:
+                if (!isQuanLy) {
+                    cout << "Lua chon khong hop le!\n";
+                    break;
+                }
                 modifyUserInfo(username);
                 break;
 
-            case 8:
+            case 9:
+                if (!isQuanLy) {
+                    cout << "Lua chon khong hop le!\n";
+                    break;
+                }
                 cout << "\nDang tien hanh backup du lieu...\n";
-                backupUsers(); // Gọi hàm backup thủ công
+                backupUsers();
                 cout << "Backup hoan thanh!\n";
                 break;
 

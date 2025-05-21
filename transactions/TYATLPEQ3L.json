@@ -1,0 +1,11 @@
+{
+    "amount": 1.0,
+    "completed_at": 1747839041,
+    "created_at": 1747839018,
+    "from_wallet_id": "W9WWTQL16G",
+    "otp_code": "544141",
+    "otp_verified": true,
+    "status": "completed",
+    "to_wallet_id": "WYI6V3IQUF",
+    "transaction_id": "TYATLPEQ3L"
+}

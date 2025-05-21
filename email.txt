@@ -1,9 +1,4 @@
-To: 
-Subject: Ma OTP xac nhan thay doi thong tin
+To: mr.tranmanh90@gmail.com
+Subject: Xác nhận giao dịch chuyển điểm
 
-Ban nhan duoc email nay vi co yeu cau thay doi thong tin tai khoan.
-Ma OTP cua ban la: 993522
-
-Ma co hieu luc trong 5 phut. Vui long khong chia se ma nay voi bat ky ai.
-Neu ban khong yeu cau thay doi, vui long lien he voi quan tri vien.
-
+Mã OTP của bạn là: 544141

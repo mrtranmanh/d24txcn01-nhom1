@@ -1,5 +1,6 @@
 #include "register.h"
 #include "utils.h"
+#include "wallet.h"
 #include <regex> // kiem tra dinh dang
 #include "sendemail.h"
 
@@ -251,13 +252,22 @@ void registerUser() {
 
     saveUserInfo(username, userData);
 
+    // Tao vi cho nguoi dung moi
+    if (!createWallet(username)) {
+        cout << "Loi khi tao vi! Dang ky that bai.\n";
+        fs::remove_all("users/" + username);
+        return;
+    }
+    cout << "Da tao vi diem cho tai khoan cua ban.\n";
+
     // Gui email chao mung
     if (sendRegistrationSuccessEmail(email, username)) {
         cout << "Email thong bao dang ky da duoc gui!\n";
+        cout << "Dang ky thanh cong!\n";
     } else {
-        cout << "Loi khi gui email dang ky!\n";
-        fs::remove_all(userDir); // Xoá thư mục nếu có lỗi trong việc lưu thông tin đăng nhập
+        cout << "Loi khi gui email dang ky! Dang ky that bai.\n";
+        // Xoa thong tin nguoi dung (bao gom ca vi)
+        fs::remove_all("users/" + username);
+        return;
     }
-
-    cout << "Dang ky thanh cong!\n";
 }
