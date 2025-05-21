@@ -66,16 +66,11 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Mỗi người dùng có một bộ dữ liệu về số điểm (ví - wallet)
 - Lưu trữ dữ liệu các giao dịch trao đổi, chuyển điểm từ một ví sang một ví khác.
 - Một ví có mã số định danh duy nhất phân biệt với tất cả các ví còn lại.
-- Ví tổng: nguồn duy nhất sinh ra tổng số điểm sẽ lưu chuyển trong toàn bộ hệ thống. 🔴
+- Ví tổng: nguồn duy nhất sinh ra tổng số điểm sẽ lưu chuyển trong toàn bộ hệ thống.
 - Giao dịch chuyển điểm giữa các ví
 - Sử dụng OTP để xác nhận thực hiện giao dịch chuyển điểm giữa các ví
 - Hệ thống ghi nhận lại giao dịch này trong lịch sử giao dịch (transaction log)
 - Cho phép người dùng theo dõi số dư, lịch sử giao dịch (và trạng thái thực hiện giao dịch)
-
-### D. Chức năng mở rộng
-- Thu gọn câu lệnh biên dịch 🔴
-- Mật khẩu ẩn khi gõ 🔴
-- Test trên macOS 🔴
 
 ## 📥 Cách tải chương trình, dịch chương trình, các tập tin, các thư viện kèm theo
 
@@ -98,7 +93,7 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Cai them chuong trinh bien dich C++: sudo apt install build-essential
 - Chạy lệnh biên dịch:
 ```bash
-g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp edit_user_info_impl.cpp manager.cpp login.cpp otp.cpp register.cpp sendemail.cpp utils.cpp wallet_manager.cpp wallet.cpp -o main
+g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp edit_user_info_impl.cpp main_wallet manager.cpp login.cpp otp.cpp register.cpp sendemail.cpp utils.cpp wallet_manager.cpp wallet.cpp -o main
 ```
 #### 2.2. Windows
 - Tải phần mềm soạn code như Visual Code ...
@@ -119,7 +114,7 @@ g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp edit_user_info_impl.cpp
     + Bạn cần đóng và mở lại bất kỳ cửa sổ dòng lệnh nào để biến PATH mới có hiệu lực.
 - Chạy lệnh biên dịch trong Visual Code (Nhớ tắt đi rồi bật lại):
 ```bash
-g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp edit_user_info_impl.cpp manager.cpp login.cpp otp.cpp register.cpp sendemail.cpp utils.cpp wallet_manager.cpp wallet.cpp -o main.exe
+g++ main.cpp backup.cpp changepassword.cpp dashboard.cpp edit_user_info_impl.cpp main_wallet manager.cpp login.cpp otp.cpp register.cpp sendemail.cpp utils.cpp wallet_manager.cpp wallet.cpp -o main.exe
 ```
 - Video thao tác chi tiết: https://www.youtube.com/watch?v=oC69vlWofJQ
 
@@ -165,6 +160,7 @@ Trên Windown click đúp file main.exe để chạy
     7. Tao tai khoan nguoi dung  
     8. Thay doi thong tin nguoi dung  
     9. Backup du lieu  
+    10. Quan ly vi tong
 3. Thoat
 
 ## 📚 Tài liệu đã tham khảo

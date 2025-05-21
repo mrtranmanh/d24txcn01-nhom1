@@ -5,6 +5,7 @@
 #include "manager.h"
 #include "edit_user_info.h"
 #include "wallet_manager.h"
+#include "main_wallet.h"
 #include <iomanip>
 
 using namespace std;
@@ -35,6 +36,7 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
             cout << "7. Tao tai khoan nguoi dung\n";
             cout << "8. Thay doi thong tin nguoi dung\n";
             cout << "9. Backup du lieu\n";
+            cout << "10. Quan ly vi tong\n";
         }
         cout << "Chon: ";
 
@@ -117,6 +119,14 @@ void showDashboard(const string& username, json& userData, const json& userInfo)
                 cout << "\nDang tien hanh backup du lieu...\n";
                 backupUsers();
                 cout << "Backup hoan thanh!\n";
+                break;
+
+            case 10:
+                if (!isQuanLy) {
+                    cout << "Lua chon khong hop le!\n";
+                    break;
+                }
+                showMainWalletMenu();
                 break;
 
             default:
