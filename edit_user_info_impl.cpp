@@ -1,6 +1,8 @@
 #include "edit_user_info.h"
 #include "utils.h"
 #include "sendemail.h"
+#include "otp.h"
+#include "otp.h"
 #include <iostream>
 #include <fstream>
 #include <regex>
@@ -11,16 +13,6 @@
 
 using namespace std;
 
-// Hàm tạo mã OTP
-string generateOTP() {
-    // Tạo số ngẫu nhiên gồm 6 chữ số
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(100000, 999999);
-    
-    return to_string(dis(gen));
-}
-
 // Hàm kiểm tra email có tồn tại hay không
 bool isEmailValid(const string& email) {
     // Biểu thức chính quy kiểm tra email
@@ -29,7 +21,7 @@ bool isEmailValid(const string& email) {
 }
 
 // Kiểm tra ngày hợp lệ
-bool isValidDate(int day, int month, int year) {
+bool isValidDateEditInfo(int day, int month, int year) {
     if (year < 1900 || year > 2100) return false; // Giới hạn năm
 
     int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -58,7 +50,7 @@ bool sendOTPEmail(const string& email, const string& otp, const string& changeDe
 }
 
 // Xác thực OTP đã nhập
-bool verifyOTP(const string& inputOTP, const string& correctOTP) {
+bool verifyOTPEditUserInfo(const string& inputOTP, const string& correctOTP) {
     return inputOTP == correctOTP;
 }
 
@@ -172,7 +164,7 @@ void editUserInfo(const string& username) {
         } else {
             // Tách ngày, tháng, năm
             int day, month, year;
-            if (sscanf(newBirthday.c_str(), "%d/%d/%d", &day, &month, &year) != 3 || !isValidDate(day, month, year)) {
+            if (sscanf(newBirthday.c_str(), "%d/%d/%d", &day, &month, &year) != 3 || !isValidDateEditInfo(day, month, year)) {
                 cout << "Ngày sinh không hợp lệ! Vui lòng nhập lại.\n";
             } else {
                 changeDescription += "- Ngày sinh: " + birthday + " -> " + newBirthday + "\n";

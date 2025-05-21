@@ -53,9 +53,9 @@ Dự án phát triển một hệ thống đăng nhập và đăng ký tài kho�
 - Cho phép đăng nhập bằng tài khoản đã có và thực hiện chức năng tương ứng
 
 ### B1. Tài khoản người dùng và chức năng
-- Người dùng thông thường được phép truy xuất và sửa thông tin cá nhân của mình 🔴
-- Gửi thông báo khi người dùng sửa thông tin 🔴
-- Xác nhận OTP của người dùng rồi mới thay đổi thông tin thành công 🔴
+- Người dùng thông thường được phép truy xuất và sửa thông tin cá nhân của mình
+- Gửi thông báo khi người dùng sửa thông tin
+- Xác nhận OTP của người dùng rồi mới thay đổi thông tin thành công
 
 ### B2. Tài khoản người quản lý và chức năng
 - Theo dõi danh sách nhóm 🔴
@@ -151,5 +151,4 @@ Trên Windown click đúp file main.exe để chạy
 ## 📚 Tài liệu đã tham khảo
 [1] JSON https://json.nlohmann.me/  
 [2] Visualstudio C++ https://code.visualstudio.com/docs/cpp/config-linux  
-[3] SMTP https://everything.curl.dev/usingcurl/smtp.html  
-[4] COTP, https://github.com/tilkinsc/COTP  
+[3] SMTP https://everything.curl.dev/usingcurl/smtp.html   
